@@ -1,0 +1,25 @@
+Conditions of task:
+1. Every node has one parent OR doesn't have parent;
+2. Every node has any quantity of child nodes OR doesn't have child node;
+
+Input data.
+Current node  |  Parent for current node
+----------------------------------------
+Node(id=1)    |       -no parent-
+Node(id=2)    |        Node(id=1)
+Node(id=3)    |        Node(id=1)
+Node(id=4)    |        Node(id=2)
+Node(id=5)    |        Node(id=3)
+Node(id=6)    |        Node(id=5)
+
+
+Output data.
+Node(id=1) -> no parent
+Node(id=2) -> Node(id=1)
+Node(id=4) -> Node(id=2) -> Node(id=1)
+Node(id=3) -> Node(id=1)
+Node(id=5) -> Node(id=3) -> Node(id=1)
+Node(id=6) -> Node(id=5) -> Node(id=3) -> Node(id=1)
+     ^            ^             ^             ^
+current node  parent for    parent for    parent for
+			  Node(id=6)    Node(id=5)    Node(id=3)
